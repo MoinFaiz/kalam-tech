@@ -1,73 +1,204 @@
-# Welcome to your Lovable project
+# Kalam Technologies Website
 
-## Project info
+A modern, responsive technology company website built with React, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/ee11143f-c7f3-4c2e-8bc1-a3dcd6110f8d
+## 🚀 Features
 
-## How can I edit this code?
+- **Fully Responsive Design** - Works seamlessly across all device sizes
+- **Modern Design System** - Professional teal/turquoise theme with clean typography
+- **Modular Architecture** - Easy to maintain and extend
+- **Theme Customization** - Simple theme switching system
+- **Performance Optimized** - Fast loading with optimized images and animations
+- **Accessibility Focused** - Built with accessibility best practices
+- **SEO Optimized** - Proper meta tags and semantic HTML
 
-There are several ways of editing your application.
+## 🎨 Design System
 
-**Use Lovable**
+The website uses a comprehensive design system defined in:
+- `src/index.css` - CSS custom properties and design tokens
+- `tailwind.config.ts` - Extended Tailwind configuration
+- `src/config/theme.ts` - Theme management system
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ee11143f-c7f3-4c2e-8bc1-a3dcd6110f8d) and start prompting.
+### Changing Themes
 
-Changes made via Lovable will be committed automatically to this repo.
+To change the website theme:
 
-**Use your preferred IDE**
+1. **Using Predefined Themes:**
+```typescript
+import { blueTheme, applyTheme } from '@/config/theme';
+applyTheme(blueTheme);
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Creating Custom Themes:**
+```typescript
+const customTheme = {
+  name: "Custom Theme",
+  colors: {
+    primary: "280 70% 50%", // Your primary color in HSL
+    primaryGlow: "280 70% 60%",
+    accent: "280 80% 60%",
+  },
+  // ... other theme properties
+};
+applyTheme(customTheme);
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🏗️ Project Structure
 
-Follow these steps:
+```
+src/
+├── components/
+│   ├── layout/          # Header, Footer components
+│   ├── sections/        # Page sections (Hero, About, Services, etc.)
+│   └── ui/             # Reusable UI components (shadcn/ui)
+├── config/
+│   └── theme.ts        # Theme configuration
+├── assets/             # Images and static assets
+├── pages/              # Page components
+└── lib/                # Utilities and helpers
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🔧 Technologies Used
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- **React 18** - Modern React with hooks
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Fast build tool and dev server
+- **shadcn/ui** - High-quality component library
+- **Lucide React** - Beautiful icon library
+- **Radix UI** - Accessible component primitives
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🚀 Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1. **Clone the repository:**
+```bash
+git clone <repository-url>
+cd kalam-technologies
+```
+
+2. **Install dependencies:**
+```bash
+npm install
+```
+
+3. **Start development server:**
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. **Build for production:**
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📱 Responsive Design
 
-**Use GitHub Codespaces**
+The website is fully responsive with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+All components are designed mobile-first with progressive enhancement.
 
-## What technologies are used for this project?
+## 🎯 Adding New Sections
 
-This project is built with:
+To add a new section:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Create component in `src/components/sections/`:**
+```typescript
+// src/components/sections/NewSection.tsx
+const NewSection = () => {
+  return (
+    <section className="py-20">
+      {/* Your content */}
+    </section>
+  );
+};
+export default NewSection;
+```
 
-## How can I deploy this project?
+2. **Import and add to main page:**
+```typescript
+// src/pages/Index.tsx
+import NewSection from "@/components/sections/NewSection";
 
-Simply open [Lovable](https://lovable.dev/projects/ee11143f-c7f3-4c2e-8bc1-a3dcd6110f8d) and click on Share -> Publish.
+// Add to the main component
+<NewSection />
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 🎨 Design Guidelines
 
-Yes, you can!
+### Colors
+- Use semantic tokens: `bg-primary`, `text-foreground`, etc.
+- Never use direct colors like `bg-blue-500`
+- All colors are defined in HSL format in the design system
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Typography
+- Use `font-display` for headings
+- Use `font-sans` for body text
+- Semantic sizes: `text-hero`, `text-display`, etc.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Spacing
+- Use consistent spacing scale: `p-4`, `mb-8`, `gap-6`, etc.
+- Sections should use `py-20 lg:py-32` for vertical padding
+
+### Components
+- All components should be responsive by default
+- Use the design system tokens consistently
+- Add hover states and smooth transitions
+
+## 🔧 Customization
+
+### Changing Content
+- Hero section: Edit `src/components/sections/HeroSection.tsx`
+- Services: Update the services array in `src/components/sections/ServicesSection.tsx`
+- Company info: Modify `src/components/sections/CompanySection.tsx`
+- Contact details: Update `src/components/layout/Footer.tsx`
+
+### Styling
+- Colors: Update CSS custom properties in `src/index.css`
+- Fonts: Change font imports in `index.html` and update `tailwind.config.ts`
+- Theme: Use the theme system in `src/config/theme.ts`
+
+## 🚀 Deployment
+
+The website can be deployed to any static hosting platform:
+
+### Lovable (Recommended)
+- Click "Publish" in the Lovable interface
+- Connect custom domain in Project Settings
+
+### Other Platforms
+- **Vercel:** Connect GitHub repository
+- **Netlify:** Drag and drop build folder
+- **Azure Static Web Apps:** Connect repository
+
+Build command: `npm run build`
+Build directory: `dist`
+
+## 📈 Performance
+
+The website is optimized for performance:
+- Optimized images with proper formats
+- CSS custom properties for efficient styling
+- Minimal JavaScript bundle
+- Smooth animations with hardware acceleration
+
+## ♿ Accessibility
+
+Built with accessibility in mind:
+- Semantic HTML structure
+- Proper ARIA labels
+- Keyboard navigation support
+- High contrast ratios
+- Screen reader friendly
+
+## 📞 Support
+
+For questions or support:
+- Email: intern.kalamtech@gmail.com
+- Create an issue in the repository
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
