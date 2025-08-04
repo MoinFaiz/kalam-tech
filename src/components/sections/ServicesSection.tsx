@@ -5,6 +5,7 @@ import aiSystemsImg from "@/assets/ai-systems.jpg";
 import dataEngineeringImg from "@/assets/data-engineering.jpg";
 import systemArchitectureImg from "@/assets/system-architecture.jpg";
 import securityComplianceImg from "@/assets/security-compliance.jpg";
+import cloudOperationsImg from "@/assets/cloud-operations.jpg";
 
 const ServicesSection = () => {
   const services = [
@@ -64,7 +65,7 @@ const ServicesSection = () => {
       id: "cloud-ops",
       title: "Cloud Operations",
       description: "Managing and optimizing cloud infrastructure for reliability, scalability, and cost efficiency.",
-      image: systemArchitectureImg,
+      image: cloudOperationsImg,
       icon: Cloud,
       tags: ["CloudOps", "DevOps", "Reliability"],
       features: [
