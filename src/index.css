@@ -6,52 +6,64 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Teal/Turquoise Technology Theme */
-    --background: 0 0% 100%;
-    --foreground: 215 25% 12%;
+    /* Custom Warm Neutral Color Palette */
+    --color-black: #000000;
+    --color-dark-gray: #474747;
+    --color-warm-brown: #b9917e;
+    --color-light-beige: #ddd8d3;
+    --color-near-white: #fdfdfd;
+    --color-white: #ffffff;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 12%;
+    /* Brand Colors - Warm Neutral Theme */
+    --background: 0 0% 99%; /* Near white background */
+    --foreground: 0 0% 0%; /* Black text */
+
+    --card: 0 0% 99%; /* Near white */
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 12%;
+    --popover-foreground: 0 0% 0%;
 
-    /* Primary - Teal Brand Color */
-    --primary: 180 70% 35%;
+    /* Primary - Warm Brown */
+    --primary: 24 25% 61%; /* #b9917e */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 180 70% 45%;
+    --primary-glow: 24 25% 71%;
 
-    /* Secondary - Professional Gray */
-    --secondary: 215 15% 95%;
-    --secondary-foreground: 215 25% 12%;
+    /* Secondary - Light Beige */
+    --secondary: 30 15% 87%; /* Light beige */
+    --secondary-foreground: 0 0% 28%; /* Dark gray */
 
-    /* Muted - Subtle Background */
-    --muted: 215 15% 97%;
-    --muted-foreground: 215 15% 45%;
+    /* Muted - Light Beige */
+    --muted: 30 15% 87%; /* Light beige */
+    --muted-foreground: 0 0% 28%; /* Dark gray */
 
-    /* Accent - Bright Teal */
-    --accent: 180 80% 50%;
+    /* Accent - Warm Brown Lighter */
+    --accent: 24 30% 71%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 15% 90%;
-    --input: 215 15% 90%;
-    --ring: 180 70% 35%;
+    --border: 30 15% 87%; /* Light beige for borders */
+    --input: 30 15% 87%;
+    --ring: 24 25% 61%; /* Warm brown for focus */
 
     --radius: 0.75rem;
 
+    /* Font Family Variables */
+    --font-display: "Montserrat";
+    --font-sans: "Work Sans";
+
     /* Design System Tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--accent) / 0.05));
-    --gradient-card: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-primary: linear-gradient(135deg, #b9917e, #c9a18e);
+    --gradient-hero: linear-gradient(135deg, rgba(185, 145, 126, 0.1), rgba(221, 216, 211, 0.05));
+    --gradient-card: linear-gradient(135deg, #fdfdfd, #ddd8d3);
     
-    /* Shadows */
-    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
-    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
-    --shadow-large: 0 20px 25px -5px hsl(var(--primary) / 0.15), 0 10px 10px -5px hsl(var(--primary) / 0.04);
-    --shadow-glow: 0 0 20px hsl(var(--primary-glow) / 0.3);
+    /* Shadows - Updated for warm neutral theme */
+    --shadow-soft: 0 4px 6px -1px rgba(185, 145, 126, 0.1), 0 2px 4px -1px rgba(185, 145, 126, 0.06);
+    --shadow-medium: 0 10px 15px -3px rgba(185, 145, 126, 0.1), 0 4px 6px -2px rgba(185, 145, 126, 0.05);
+    --shadow-large: 0 20px 25px -5px rgba(185, 145, 126, 0.15), 0 10px 10px -5px rgba(185, 145, 126, 0.04);
+    --shadow-glow: 0 0 20px rgba(185, 145, 126, 0.3);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -59,21 +71,15 @@
 
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar colors updated for warm neutral theme */
+    --sidebar-background: 0 0% 99%; /* Near white */
+    --sidebar-foreground: 0 0% 28%; /* Dark gray */
+    --sidebar-primary: 24 25% 61%; /* Warm brown */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 15% 87%; /* Light beige */
+    --sidebar-accent-foreground: 0 0% 28%;
+    --sidebar-border: 30 15% 87%; /* Light beige */
+    --sidebar-ring: 24 25% 61%; /* Warm brown */
   }
 
   .dark {
@@ -127,6 +133,41 @@
 }
 
 @layer components {
+  /* Custom Color Utilities */
+  .bg-warm-black { background-color: var(--color-black); }
+  .bg-warm-dark-gray { background-color: var(--color-dark-gray); }
+  .bg-warm-brown { background-color: var(--color-warm-brown); }
+  .bg-warm-light-beige { background-color: var(--color-light-beige); }
+  .bg-warm-near-white { background-color: var(--color-near-white); }
+  .bg-warm-white { background-color: var(--color-white); }
+
+  .text-warm-black { color: var(--color-black); }
+  .text-warm-dark-gray { color: var(--color-dark-gray); }
+  .text-warm-brown { color: var(--color-warm-brown); }
+  .text-warm-light-beige { color: var(--color-light-beige); }
+  .text-warm-near-white { color: var(--color-near-white); }
+  .text-warm-white { color: var(--color-white); }
+
+  .border-warm-brown { border-color: var(--color-warm-brown); }
+  .border-warm-light-beige { border-color: var(--color-light-beige); }
+
+  /* Alternative Background Options */
+  .bg-warm-gradient-light {
+    background: linear-gradient(135deg, var(--color-near-white), var(--color-light-beige));
+  }
+  
+  .bg-warm-gradient-subtle {
+    background: linear-gradient(135deg, var(--color-white), var(--color-near-white));
+  }
+  
+  .bg-warm-beige-light {
+    background-color: rgba(221, 216, 211, 0.2); /* Light beige at 20% */
+  }
+  
+  .bg-warm-beige-medium {
+    background-color: rgba(221, 216, 211, 0.5); /* Light beige at 50% */
+  }
+
   /* Hero Section Utilities */
   .hero-gradient {
     background: var(--gradient-hero);
@@ -161,6 +202,35 @@
   .btn-primary:hover {
     box-shadow: var(--shadow-glow);
     transform: translateY(-1px);
+  }
+
+  /* Warm Neutral Button Variants */
+  .btn-warm-primary {
+    background-color: var(--color-warm-brown);
+    color: var(--color-white);
+    border: 2px solid var(--color-warm-brown);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-warm-primary:hover {
+    background-color: var(--color-dark-gray);
+    border-color: var(--color-dark-gray);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .btn-warm-secondary {
+    background-color: transparent;
+    color: var(--color-warm-brown);
+    border: 2px solid var(--color-warm-brown);
+    transition: var(--transition-smooth);
+  }
+  
+  .btn-warm-secondary:hover {
+    background-color: var(--color-warm-brown);
+    color: var(--color-white);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
   }
 
   /* Animations */

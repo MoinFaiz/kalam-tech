@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -62,11 +63,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom Warm Neutral Palette
+				warm: {
+					black: 'var(--color-black)',
+					'dark-gray': 'var(--color-dark-gray)',
+					brown: 'var(--color-warm-brown)',
+					'light-beige': 'var(--color-light-beige)',
+					'near-white': 'var(--color-near-white)',
+					white: 'var(--color-white)',
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'system-ui', 'sans-serif'],
-				display: ['Poppins', 'system-ui', 'sans-serif'],
+				// Dynamic font families using CSS variables
+				sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+				display: ['var(--font-display)', 'system-ui', 'sans-serif'],
 			},
 			fontSize: {
 				'hero': ['4rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }],
@@ -116,5 +127,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

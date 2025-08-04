@@ -1,83 +1,65 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/d27d87d2c024cbcc71e8b59d85e39709.jpg";
+import logo from "@/assets/logo2_dark.png";
 
 const HeroSection = () => {
+  const areStatsVisible = false;
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    // TODO: I am changing in class name from 'min-h-screen' to 'min-h-[850px]'. Rethink
+    <section id="home" className="relative py-20 lg:py-32 min-h-[850px] flex items-center overflow-hidden bg-warm-black">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={heroBackground}
           alt="Technology team collaboration"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 hero-gradient" />
+        <div className="absolute inset-0 bg-warm-dark-gray/20" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto fade-in-up">
-          {/* Subtitle */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
-            <span className="text-primary font-medium text-sm">
-              Engineering Tomorrow's Digital Infrastructure
-            </span>
-          </div>
+      {/* Logo Top Left */}
+      <img
+        src={logo}
+        alt="Company Logo"
+        className="absolute top-12 left-12 z-20 w-24 h-auto md:w-56"
+        style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' }}
+      />
 
+      {/* Content */}
+      <div className="relative z-10 pl-8 md:pl-28">
+        <div className="fade-in-up text-left">
           {/* Main Headline */}
-          <h1 className="font-display font-bold text-4xl md:text-6xl lg:text-hero mb-6 leading-tight">
-            Designing Systems That{" "}
-            <span className="text-gradient">Think</span>,{" "}
-            <span className="text-gradient">Scale</span>, and{" "}
-            <span className="text-gradient">Last</span>.
+          <h1 className="font-display text-2xl md:text-7xl max-w-7xl mb-6 leading-tight break-words whitespace-normal text-left text-white">
+            Designing Systems That Think, Scale and Last.
           </h1>
 
-          {/* Description */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            We build intelligent systems that scale operations, automate complexity, 
-            and evolve with technology to drive innovation beyond imagination.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="btn-primary text-lg px-8 py-4 group">
-              Start Your Project
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="text-lg px-8 py-4 border-primary/30 hover:bg-primary/10"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
-          </div>
-
           {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 pt-8 border-t border-border/50">
-            <div className="stagger-fade">
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">50+</div>
-              <div className="text-muted-foreground">Projects Delivered</div>
+          {areStatsVisible && (
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gradient mb-1">50+</div>
+                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gradient mb-1">5+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gradient mb-1">99.9%</div>
+                <div className="text-sm text-muted-foreground">Uptime SLA</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-gradient mb-1">24/7</div>
+                <div className="text-sm text-muted-foreground">Support</div>
+              </div>
             </div>
-            <div className="stagger-fade">
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">99.9%</div>
-              <div className="text-muted-foreground">System Uptime</div>
-            </div>
-            <div className="stagger-fade">
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">24/7</div>
-              <div className="text-muted-foreground">Support Available</div>
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
+        <div className="w-6 h-10 border-2 border-black/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-black rounded-full mt-2 animate-pulse" />
         </div>
       </div>
     </section>
