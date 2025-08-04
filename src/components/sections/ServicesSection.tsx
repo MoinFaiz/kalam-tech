@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Brain, Database, Layers, Shield } from "lucide-react";
+import { Brain, Cloud, Database, Layers, Shield } from "lucide-react";
 import aiSystemsImg from "@/assets/ai-systems.jpg";
 import dataEngineeringImg from "@/assets/data-engineering.jpg";
 import systemArchitectureImg from "@/assets/system-architecture.jpg";
@@ -11,28 +11,26 @@ const ServicesSection = () => {
     {
       id: "intelligent-systems",
       title: "Intelligent Systems",
-      description: "Building intelligent systems that leverage machine learning and AI to automate complex processes and drive operational excellence.",
+      description: "Building intelligent systems that leverage AI/ML to automate complex processes and drive operational excellence.",
       image: aiSystemsImg,
       icon: Brain,
       tags: ["AI/ML", "Automation", "Analytics"],
       features: [
         "Machine Learning Models",
         "Process Automation",
-        "Predictive Analytics",
         "Natural Language Processing"
       ]
     },
     {
       id: "data-engineering",
       title: "Data Engineering & Analytics",
-      description: "Building intelligent data systems that transform raw information into actionable insights for data-driven decision making.",
+      description: "Building intelligent data systems that transform raw information into actionable insights.",
       image: dataEngineeringImg,
       icon: Database,
       tags: ["Big Data", "ETL", "Analytics"],
       features: [
         "Data Pipeline Architecture",
         "Real-time Processing",
-        "Data Warehousing",
         "Business Intelligence"
       ]
     },
@@ -46,8 +44,7 @@ const ServicesSection = () => {
       features: [
         "Microservices Architecture",
         "Cloud Infrastructure",
-        "System Integration",
-        "Performance Optimization"
+        "System Integration"
       ]
     },
     {
@@ -59,28 +56,38 @@ const ServicesSection = () => {
       tags: ["Security", "Compliance", "Privacy"],
       features: [
         "Security Architecture",
-        "Compliance Frameworks",
         "Data Protection",
         "Threat Detection"
+      ]
+    },
+    {
+      id: "cloud-ops",
+      title: "Cloud Operations",
+      description: "Managing and optimizing cloud infrastructure for reliability, scalability, and cost efficiency.",
+      image: systemArchitectureImg,
+      icon: Cloud,
+      tags: ["CloudOps", "DevOps", "Reliability"],
+      features: [
+        "Cloud Monitoring",
+        "Cost Optimization",
+        "Disaster Recovery"
       ]
     }
   ];
 
   return (
-    <section id="services" className="py-20 lg:py-32">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-0 min-h-[850px] flex items-center bg-warm-near-white">
+      <div className="w-full pl-8 md:pl-28 pr-8 md:pr-24 pt-8 md:pt-24 pb-20 lg:pb-32">
         {/* Section Header */}
-        <div className="text-center mb-16 fade-in-up">
-          <h2 className="font-display font-bold text-3xl lg:text-display mb-6">
-            Our <span className="text-gradient">Focus Areas</span>
+        <div className="mb-16 fade-in-up text-left">
+          <h2 className="font-display text-4xl lg:text-6xl mb-6 text-warm-dark-gray">
+            <span className="font-normal">Our</span><br />
+            <span className="font-bold text-warm-black">Focus Areas</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We specialize in building systems that are not just functional, but transformational.
-          </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {services.map((service, index) => (
             <Card 
               key={service.id}
@@ -94,7 +101,7 @@ const ServicesSection = () => {
                     alt={service.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
                       <service.icon className="h-5 w-5 text-white" />
@@ -112,11 +119,11 @@ const ServicesSection = () => {
                   ))}
                 </div>
                 
-                <CardTitle className="text-xl mb-3 group-hover:text-primary transition-colors">
+                <CardTitle className="text-lg mb-4 group-hover:text-primary transition-colors leading-tight">
                   {service.title}
                 </CardTitle>
                 
-                <CardDescription className="text-muted-foreground mb-4 leading-relaxed">
+                <CardDescription className="text-muted-foreground mb-4 leading-relaxed text-sm text-justify">
                   {service.description}
                 </CardDescription>
 

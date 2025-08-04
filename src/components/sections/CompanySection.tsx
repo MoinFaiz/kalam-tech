@@ -1,109 +1,58 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import companyBackground from "@/assets/5a48194af9d0d4d80ccf4d2d38718672.jpg";
+import logo from "@/assets/logo2_dark.png";
 
 const CompanySection = () => {
+  const areStatsVisible = false;
   return (
-    <section className="py-20 lg:py-32 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Content */}
-          <div className="fade-in-up">
-            <h2 className="font-display font-bold text-3xl lg:text-display mb-6">
-              We are a technology studio driven by{" "}
-              <span className="text-gradient">engineering and strategic thinking</span>.
-            </h2>
-            
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Specializing in AI, cloud infrastructure, and modular design, we build systems 
-              that are not just functional, but transformational.
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              <div className="text-center p-4">
-                <div className="text-2xl font-bold text-gradient mb-1">50+</div>
-                <div className="text-sm text-muted-foreground">Projects Delivered</div>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-2xl font-bold text-gradient mb-1">5+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-2xl font-bold text-gradient mb-1">99.9%</div>
-                <div className="text-sm text-muted-foreground">Uptime SLA</div>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-2xl font-bold text-gradient mb-1">24/7</div>
-                <div className="text-sm text-muted-foreground">Support</div>
-              </div>
-            </div>
-
-            <Button className="btn-primary group">
-              Learn More About Us
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
-
-          {/* Right Content - Contact Card */}
-          <div className="fade-in-up">
-            <Card className="card-elevated">
-              <CardContent className="p-8">
-                <h3 className="font-display font-semibold text-2xl mb-6">
-                  Ready to Build the{" "}
-                  <span className="text-gradient">Future Together?</span>
-                </h3>
-                
-                <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Let's discuss how we can transform your vision into reality with 
-                  cutting-edge technology solutions.
-                </p>
-
-                <div className="space-y-4 mb-8">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-medium">Email</div>
-                      <div className="text-sm text-muted-foreground">
-                        intern.kalamtech@gmail.com
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Phone className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-medium">Phone</div>
-                      <div className="text-sm text-muted-foreground">
-                        +1 (555) 123-4567
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <div className="font-medium">Location</div>
-                      <div className="text-sm text-muted-foreground">
-                        Global Remote Team
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <Button className="btn-primary w-full group">
-                  Start Your Project
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+    <section className="py-0 min-h-[850px] flex items-center justify-center bg-warm-beige-medium relative">
+      {/* Logo Top Left */}
+      <img
+        src={logo}
+        alt="Company Logo"
+        className="absolute top-12 left-12 z-20 w-24 h-auto md:w-56"
+        style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' }}
+      />
+      {/* Centered Background Image */}
+      <div className="absolute inset-0 flex items-center justify-center p-1">
+        <div className="relative w-3/4 h-3/4 rounded-xl overflow-hidden">
+          <img
+            src={companyBackground}
+            alt="Technology workspace"
+            className="w-full h-full object-cover opacity-35"
+          />
+          <div className="absolute inset-0" />
         </div>
+      </div>
+      
+      <div className="fade-in-up px-8 md:px-64 py-12 md:py-24 w-full mx-auto text-center bg-transparent rounded-xl relative z-10">
+        <h2 className="font-display text-4xl lg:text-6xl mb-20 text-warm-dark-gray">
+          <span className="font-normal">We are a technology studio driven by</span> <span className="font-bold text-warm-black">engineering and strategic thinking.</span>
+        </h2>
+
+        <p className="text-4xl text-muted-foreground mb-8 leading-snug mx-auto whitespace-normal">
+          Specializing in AI, cloud infrastructure, and modular design, we build systems that are not just functional, but transformational.
+        </p>
+
+        {areStatsVisible && (
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-gradient mb-1">50+</div>
+              <div className="text-sm text-muted-foreground">Projects Delivered</div>
+            </div>
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-gradient mb-1">5+</div>
+              <div className="text-sm text-muted-foreground">Years Experience</div>
+            </div>
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-gradient mb-1">99.9%</div>
+              <div className="text-sm text-muted-foreground">Uptime SLA</div>
+            </div>
+            <div className="text-center p-4">
+              <div className="text-2xl font-bold text-gradient mb-1">24/7</div>
+              <div className="text-sm text-muted-foreground">Support</div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
