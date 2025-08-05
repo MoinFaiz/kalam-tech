@@ -86,24 +86,24 @@ const ServicesSection = () => {
   return (
     <section
       id="services"
-      className="py-0 min-h-[850px] flex items-center bg-warm-near-white"
+      className="bg-warm-near-white"
     >
-      <div className="w-full pl-4 md:pl-28 pr-8 md:pr-24 pt-8 md:pt-24 pb-20 lg:pb-32">
-        {/* Section Header */}
-        <div className="mb-16 fade-in-up text-left">
-          <h2 className="font-display text-4xl lg:text-6xl mb-6 text-warm-dark-gray m-0 p-0 pl-0">
-            <span className="font-normal">Our</span>
-            <br />
-            <span className="font-bold text-warm-black">Focus Areas</span>
+      {/* Mobile Layout */}
+      <div className="lg:hidden px-4 sm:px-6 py-12 sm:py-16">
+        {/* Mobile Header */}
+        <div className="mb-8 sm:mb-12 fade-in-up text-center sm:text-left">
+          <h2 className="font-display text-3xl sm:text-4xl text-warm-dark-gray leading-tight">
+            <span className="font-normal block">Our</span>
+            <span className="font-bold text-warm-black block">Focus Areas</span>
           </h2>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {/* Mobile Services - Single Column */}
+        <div className="space-y-6">
           {services.map((service, index) => (
             <Card
               key={service.id}
-              className={`card-elevated group cursor-pointer stagger-fade h-full`}
+              className={`card-elevated group cursor-pointer stagger-fade`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardHeader className="p-0">
@@ -111,19 +111,19 @@ const ServicesSection = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent" />
                   <div className="absolute bottom-4 left-4">
-                    <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <service.icon className="h-5 w-5 text-white" />
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
+                      <service.icon className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                     </div>
                   </div>
                 </div>
               </CardHeader>
 
-              <CardContent className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                   {service.tags.map((tag) => (
                     <Badge key={tag} variant="secondary" className="text-xs">
                       {tag}
@@ -131,11 +131,11 @@ const ServicesSection = () => {
                   ))}
                 </div>
 
-                <CardTitle className="text-lg mb-4 group-hover:text-primary transition-colors leading-tight">
+                <CardTitle className="text-lg sm:text-xl mb-3 sm:mb-4 group-hover:text-primary transition-colors leading-tight">
                   {service.title}
                 </CardTitle>
 
-                <CardDescription className="text-muted-foreground mb-4 leading-relaxed text-sm text-justify">
+                <CardDescription className="text-muted-foreground mb-4 leading-relaxed text-sm sm:text-base">
                   {service.description}
                 </CardDescription>
 
@@ -153,6 +153,77 @@ const ServicesSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+      </div>
+
+      {/* Desktop Layout */}
+      <div className="hidden lg:flex min-h-[850px] items-center">
+        <div className="w-full pl-28 pr-24 pt-24 pb-32">
+          {/* Desktop Header */}
+          <div className="mb-16 fade-in-up text-left">
+            <h2 className="font-display text-4xl xl:text-6xl mb-6 text-warm-dark-gray">
+              <span className="font-normal">Our</span>
+              <br />
+              <span className="font-bold text-warm-black">Focus Areas</span>
+            </h2>
+          </div>
+
+          {/* Desktop Services Grid */}
+          <div className="grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+              <Card
+                key={service.id}
+                className={`card-elevated group cursor-pointer stagger-fade h-full`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <CardHeader className="p-0">
+                  <div className="relative overflow-hidden rounded-t-lg">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/25 to-transparent" />
+                    <div className="absolute bottom-4 left-4">
+                      <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
+                        <service.icon className="h-5 w-5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </CardHeader>
+
+                <CardContent className="p-6">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {service.tags.map((tag) => (
+                      <Badge key={tag} variant="secondary" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <CardTitle className="text-lg mb-4 group-hover:text-primary transition-colors leading-tight">
+                    {service.title}
+                  </CardTitle>
+
+                  <CardDescription className="text-muted-foreground mb-4 leading-relaxed text-sm text-justify">
+                    {service.description}
+                  </CardDescription>
+
+                  <ul className="space-y-2">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-center text-sm text-muted-foreground"
+                      >
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
