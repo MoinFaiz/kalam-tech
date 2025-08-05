@@ -16,7 +16,7 @@ const ContactSection = () => {
         />
       </div>
       {/* Right Column: Title at very top, then content below */}
-      <div className="flex flex-col flex-1 md:basis-5/12 fade-in-up pr-8 md:pr-24 pt-8 md:pt-24">
+      <div className="flex flex-col flex-1 md:basis-5/12 fade-in-up pr-8 md:pr-24 pt-8 md:pt-24 pb-8 md:pb-24 pl-4 md:pl-0">
         <h2 className="font-display text-4xl lg:text-6xl m-0 p-0 text-warm-dark-gray">
           <span className="font-normal">Ready to Build the</span>
           <br />

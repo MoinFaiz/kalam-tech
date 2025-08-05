@@ -9,7 +9,7 @@ const CompanySection = () => {
       <img
         src={logo}
         alt="Company Logo"
-        className="absolute top-12 left-12 z-20 w-24 h-auto md:w-56"
+        className="absolute top-4 left-4 md:top-12 md:left-12 z-20 w-24 h-auto md:w-56"
         style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.15))' }}
       />
       {/* Centered Background Image */}

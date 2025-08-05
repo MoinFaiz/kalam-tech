@@ -88,10 +88,10 @@ const ServicesSection = () => {
       id="services"
       className="py-0 min-h-[850px] flex items-center bg-warm-near-white"
     >
-      <div className="w-full pl-8 md:pl-28 pr-8 md:pr-24 pt-8 md:pt-24 pb-20 lg:pb-32">
+      <div className="w-full pl-4 md:pl-28 pr-8 md:pr-24 pt-8 md:pt-24 pb-20 lg:pb-32">
         {/* Section Header */}
         <div className="mb-16 fade-in-up text-left">
-          <h2 className="font-display text-4xl lg:text-6xl mb-6 text-warm-dark-gray">
+          <h2 className="font-display text-4xl lg:text-6xl mb-6 text-warm-dark-gray m-0 p-0 pl-0">
             <span className="font-normal">Our</span>
             <br />
             <span className="font-bold text-warm-black">Focus Areas</span>

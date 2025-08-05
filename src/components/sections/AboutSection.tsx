@@ -21,7 +21,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="w-full min-h-[850px] flex md:flex-row flex-col md:gap-24 gap-12 p-0 m-0 bg-warm-beige-medium">
+    <section className="w-full min-h-[850px] flex md:flex-row flex-col md:gap-24 gap-12 p-0 m-0 bg-warm-beige-medium pb-8 md:pb-24">
       {/* Left Column: Full Image, no margin/padding, covers full height and width */}
       <div className="relative flex-1 md:basis-5/12 min-h-[850px] w-full p-0 m-0">
         <img
@@ -31,9 +31,9 @@ const AboutSection = () => {
         />
       </div>
       {/* Right Column: Mission, Vision, Philosophy */}
-      <div className="flex-1 md:basis-5/12 flex flex-col fade-in-up pr-8 md:pr-32 pt-8 md:pt-24">
+      <div className="flex-1 md:basis-5/12 flex flex-col fade-in-up pr-8 md:pr-32 pt-8 md:pt-24 pl-4 md:pl-0">
         <div className="mb-16 fade-in-up text-left">
-          <h2 className="font-display text-4xl lg:text-6xl text-warm-dark-gray">
+          <h2 className="font-display text-4xl lg:text-6xl text-warm-dark-gray m-0 p-0 pl-0">
             <span className="font-normal">Engineering Tomorrow's</span>
             <br />
             <span className="font-bold text-warm-black">Digital Infrastructure</span>
