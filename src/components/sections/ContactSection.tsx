@@ -74,7 +74,7 @@ const ContactSection = () => {
       </div>
 
       {/* Desktop Layout: Side by side */}
-      <div className="hidden lg:flex min-h-[850px]">
+      <div className="hidden lg:flex min-h-[850px] gap-16">
         {/* Desktop Image */}
         <div className="relative flex-1 basis-5/12 min-h-[800px]">
           <img
